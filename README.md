@@ -103,4 +103,4 @@ Visit `http://tdd_django.localhost:8080/`
 
 ### Contact 
    - Owner: Tonye Jack
-   - Email: jtonye@ymail.co
+   - Email: jtonye@ymail.com
