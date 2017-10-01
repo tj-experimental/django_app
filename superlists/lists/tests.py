@@ -1,10 +1,18 @@
 from django.core.urlresolvers import resolve
 from django.test import TestCase
 from django.http import HttpRequest
-from lists.views import home_page
+from .views import home_page
+from django.template.loader import render_to_string
+
 
 class HomePageTest(TestCase):
-    
+
+    @classmethod
+    def setUpClass(cls):
+        import os
+        os.environ["DJANGO_SETTINGS_MODULE"] = "superlists.settings"
+        super(HomePageTest, cls).setUpClass()
+
     def setUp(self):
         super(HomePageTest, self).setUp()
         self.request = HttpRequest()
@@ -15,9 +23,6 @@ class HomePageTest(TestCase):
 
     def test_home_page_returns_correct_html(self):
         response = home_page(self.request)
-        self.assertTrue(response.content.startswith(b'<html>'))
-        self.assertIn(b'<title>To-Do lists</title>', response.content)
-        self.assertTrue(response.content.endswith(b'</html>'))
-
-    
+        expected_html = render_to_string('home.html')
+        self.assertEqual(response.content.decode(), expected_html)
 

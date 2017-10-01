@@ -1,6 +1,9 @@
+from __future__ import unicode_literals
+
+import logging
 from django.shortcuts import render
-from django.http import HttpResponse
+
+log = logging.getLogger(__name__)
 
 def home_page(request):
-   return HttpResponse('<html><title>To-Do lists</title></html>')
-
+    return render(request, 'home.html')

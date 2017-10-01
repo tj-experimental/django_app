@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lists',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,10 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'superlist',
-	'HOST': 'localhost',
+        'HOST': 'localhost',
         'USER': 'test_user',
         'PASSWORD': 'Xm12fdtfrdoit4',
-	'PORT': '5432',
+        'PORT': '5432',
     }
 }
 
