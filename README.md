@@ -22,4 +22,4 @@
 
 ### Contact 
    - Owner: Tonye Jack
-   - Email: [jtonye@ymail.com](mailto://jtonye@ymail.com)
+   - Email: [jtonye@ymail.com](mailto:jtonye@ymail.com)
