@@ -18,7 +18,7 @@
  
 ##### Confirm setup with `vagrant status`
 
-### Visit http://tdd-django.local:8080
+#### Visit http://tdd-django.local:8080
 
 ### Contact 
    - Owner: Tonye Jack
