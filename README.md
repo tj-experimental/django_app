@@ -13,8 +13,8 @@
  2.  Download [Vagrant](https://www.vagrantup.com/downloads.html) 
  
 #### Run Vagrant
- 1. `cd Vagrant`
- 2. vagrant up
+ - `cd Vagrant`
+ - `vagrant up`
  
 - Confirm setup with `vagrant status`
 
