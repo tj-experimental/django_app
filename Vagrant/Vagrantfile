@@ -76,11 +76,13 @@ Vagrant.configure("2") do |config|
   SHELL
 
   # Provision conf files Needs root access
-  # config.vm.provision "file", source: "..\\apache_conf\\tdd_django.conf", 
-  #   destination: "/etc/apache2/sites-available/tdd_django.conf"
+  config.vm.provision "file", source: "..\\apache_conf\\tdd_django.conf", 
+    destination: "$HOME/tdd_django.conf"
   # config.vm.provision "file", source: "..\\apache_conf\\ports.conf", 
-  #   destination: "/etc/apache2/ports.conf"
-
+  #   destination: "$HOME/ports.conf"
+  config.vm.provision "file", source: "..\\scripts\\create_test_user.sql", 
+    destination: "$HOME/create_test_user.sql"
+  
   config.vm.provision :shell, :path => "..\\provision\\bootstrap.sh", 
   :privileged => true
 

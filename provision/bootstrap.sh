@@ -7,6 +7,8 @@ if [ ! `id -u student 2>/dev/null || echo -1` -ge 0 ]; then
 	sudo echo "student ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/student
 fi 	
 
+sudo -su student
+
 # ufw setup
 sudo ufw default deny incoming 
 sudo ufw default allow outgoing 
@@ -35,9 +37,11 @@ done
 
 create_test_user(){
 	echo "Creating test user..."
-   	sudo -u postgres psql -d postgres -f /home/student/workspaces/tdd_django/scripts/create_test_user.sql
+   	sudo -u postgres psql -d postgres -f "/home/vagrant/create_test_user.sql"
 }
 
 # Check for test user
 sudo -u postgres psql -d postgres -t -c "\du" | cut -d \| -f 1 | grep -qw "test_user" || create_test_user
 
+sudo mv "/home/vagrant/tdd_django.conf" /etc/apache2/sites-available
+sudo chown student:student /etc/apache2/sites-available/tdd_django.conf
